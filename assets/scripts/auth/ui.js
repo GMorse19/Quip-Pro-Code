@@ -49,6 +49,7 @@ const onSignInSuccess = function (responseData) {
   // $('.show-signOut').show()
   signUpFailureMessage('')
   store.user = responseData.user
+  console.log(store.user)
   successMessage('You are now signed in! ' + store.user.email)
 }
 
