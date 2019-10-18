@@ -1,4 +1,5 @@
 const store = require('../store')
+const showQuipsTemplate = require('../templates/quip.handlebars')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
@@ -28,8 +29,10 @@ const onCreateQuipFailure = function () {
 const onGetQuipSuccess = function (data) {
   // store.quips = responseData.quips
   console.log(data)
-  console.log('onGetQuipSuccess ' + data.quips[0].author)
+  console.log('onGetQuipSuccess ' + data.quips[0].content)
+  const showQuipsHtml = showQuipsTemplate({ quips: data.quips })
   successMessage('It worked')
+  $('.content').append(showQuipsHtml)
 }
 
 const onGetQuipFailure = function () {
