@@ -71,9 +71,14 @@
           </div>
         </section>
         <section>
-          <button id="new-quip">
-            Quips Create
-          </button>
+          <h4>Create Quip</h4>
+              <form id="new-quip" class="forms">
+                <input required type="text" name="quip[content]" placeholder="Enter quip...">
+                <input required type="text" name="quip[author]" placeholder="Enter Author">
+                <input required type="text" name="quip[mood]" placeholder="Enter Mood">
+            <br>
+          <button>submit quip</button>
+        </form>
           <button id="get-quip">
             Quips Get
           </button>

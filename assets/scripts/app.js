@@ -12,6 +12,6 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#new-quip').on('click', quipEvents.onCreateQuip)
+  $('#new-quip').on('submit', quipEvents.onCreateQuip)
   $('#get-quip').on('click', quipEvents.onGetQuip)
 })

@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const createQuip = function () {
+const createQuip = function (formData) {
   console.log('createQuip')
   return $.ajax({
     method: 'POST',
@@ -11,7 +11,7 @@ const createQuip = function () {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: '{}'
+    data: formData
   })
 }
 

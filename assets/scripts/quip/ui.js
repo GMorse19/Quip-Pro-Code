@@ -14,7 +14,9 @@ const failureMessage = function (newText) {
 }
 
 const onCreateQuipSuccess = function (responseData) {
-  console.log('onCreateQuipSuccess')
+  console.log(responseData.quip.content)
+  store.quip = responseData.quip
+  console.log('onCreateQuipSuccess ' + store.quip.content)
   successMessage('It worked')
 }
 
@@ -24,7 +26,7 @@ const onCreateQuipFailure = function () {
 }
 
 const onGetQuipSuccess = function (responseData) {
-  console.log('onGetQuipSuccess' + store.user.quips )
+  console.log('onGetQuipSuccess ' + store.user.email)
   successMessage('It worked')
 }
 
