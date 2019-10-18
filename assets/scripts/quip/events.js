@@ -23,7 +23,28 @@ const onGetQuip = function (event) {
     .catch(ui.onGetQuipFailure)
 }
 
+const onUpdateQuip = function (event) {
+  event.preventDefault()
+  // const oldAuthor = ($(event.target).attr('')
+  // const formData = getFormFields(form)
+  api.updateQuip(formData)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
+
+const onShowQuip = function (event) {
+  console.log('onShowQuip')
+  event.preventDefault()
+  const id = $('#find-quip').val()
+  console.log(id)
+  api.showQuip(id)
+    .then(ui.onShowQuipSuccess)
+    .catch(ui.onShowQuipFailure)
+}
+
 module.exports = {
   onCreateQuip,
-  onGetQuip
+  onGetQuip,
+  onUpdateQuip,
+  onShowQuip
 }

@@ -79,6 +79,21 @@
             <br>
           <button>submit quip</button>
         </form>
+        <h4>Show Quip</h4>
+            <form id="show-quip" class="forms">
+              <input id="find-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
+          <br>
+        <button>show quip</button>
+        <p id="show-message"></p>
+      </form>
+        <h4>Update Quip</h4>
+            <form id="update-quip" class="forms">
+              <input required type="text" name="quip[id]" placeholder="Enter quip id...">
+              <input required type="text" name="quip[author]" placeholder="Enter Author">
+              <input required type="text" name="quip[mood]" placeholder="Enter Mood">
+          <br>
+        <button>update quip</button>
+      </form>
           <button id="get-quip">
             Quips Get
           </button>
