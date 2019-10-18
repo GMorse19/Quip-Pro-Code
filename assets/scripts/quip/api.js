@@ -25,14 +25,18 @@ const getQuip = function () {
   })
 }
 
-const updateQuip = function (formData) {
+const updateQuip = function (author, id) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/quips',
+    url: config.apiUrl + `/quips/${id}`,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData
+    data: {
+      'quip': {
+        'author': author
+      }
+    }
   })
 }
 
@@ -46,9 +50,20 @@ const showQuip = function (id) {
   })
 }
 
+const destroyQuip = function (id) {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + `/quips/${id}`,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createQuip,
   getQuip,
   updateQuip,
-  showQuip
+  showQuip,
+  destroyQuip
 }

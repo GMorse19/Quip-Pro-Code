@@ -16,4 +16,5 @@ $(() => {
   $('#get-quip').on('click', quipEvents.onGetQuip)
   $('#update-quip').on('submit', quipEvents.onUpdateQuip)
   $('#show-quip').on('submit', quipEvents.onShowQuip)
+  $('#delete-quip').on('submit', quipEvents.onDestroyQuip)
 })

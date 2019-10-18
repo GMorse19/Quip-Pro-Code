@@ -37,7 +37,8 @@ const onGetQuipFailure = function () {
   failureMessage('WRONG!')
 }
 
-const onUpdateQuipSuccess = function () {
+const onUpdateQuipSuccess = function (data) {
+  console.log(data)
   console.log('onUpdateQuipSuccess')
   successMessage('onUpdateQuip worked!')
 }
@@ -56,6 +57,14 @@ const onShowQuipFailure = function () {
   console.log('onShowQuipFailure')
 }
 
+const onDestroyQuipSuccess = function () {
+  console.log('onDestroyQuipSuccess')
+}
+
+const onDestroyQuipFailure = function () {
+  console.log('onDestroyQuipFailure')
+}
+
 module.exports = {
   onCreateQuipSuccess,
   onCreateQuipFailure,
@@ -64,5 +73,7 @@ module.exports = {
   onUpdateQuipSuccess,
   onUpdateQuipFailure,
   onShowQuipSuccess,
-  onShowQuipFailure
+  onShowQuipFailure,
+  onDestroyQuipSuccess,
+  onDestroyQuipFailure
 }

@@ -60,41 +60,48 @@
             <br>
 
             <br>
-              <div class="show-signOut">
-                  <div class="inner-wrap">
-                    <form id="sign-out">
-                      <button class="new-out">Sign Out</button>
-                    </form>
-                  </div>
-              </div>
+
             </div>
           </div>
         </section>
         <section>
+          <h4>Get All Quips</h4>
+          <button id="get-quip">
+            Quips Get
+          </button>
           <h4>Create Quip</h4>
               <form id="new-quip" class="forms">
                 <input required type="text" name="quip[content]" placeholder="Enter quip...">
                 <input required type="text" name="quip[author]" placeholder="Enter Author">
                 <input required type="text" name="quip[mood]" placeholder="Enter Mood">
-            <br>
           <button>submit quip</button>
         </form>
         <h4>Show Quip</h4>
             <form id="show-quip" class="forms">
               <input id="find-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
-          <br>
         <button>show quip</button>
         <p id="show-message"></p>
       </form>
+      <h4>Delete Quip</h4>
+          <form id="delete-quip" class="forms">
+            <input id="destroy-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
+      <button>Destroy quip</button>
+      <p id="show-message"></p>
+    </form>
         <h4>Update Quip</h4>
             <form id="update-quip" class="forms">
-              <input required type="text" name="quip[id]" placeholder="Enter quip id...">
-              <input required type="text" name="quip[author]" placeholder="Enter Author">
-              <input required type="text" name="quip[mood]" placeholder="Enter Mood">
-          <br>
+              <input required id="quip-id" type="text" name="quip[id]" placeholder="Enter quip id...">
+              <input required id="quip-author" type="text" name="quip[author]" placeholder="Enter Author">
+              <!-- <input required id="quip-mood" type="text" name="quip[mood]" placeholder="Enter Mood"> -->
         <button>update quip</button>
       </form>
-          <button id="get-quip">
-            Quips Get
-          </button>
+      <br>
+
+          <div class="show-signOut">
+              <div class="inner-wrap">
+                <form id="sign-out">
+                  <button class="new-out">Sign Out</button>
+                </form>
+              </div>
+          </div>
         </section>

@@ -25,9 +25,12 @@ const onGetQuip = function (event) {
 
 const onUpdateQuip = function (event) {
   event.preventDefault()
-  // const oldAuthor = ($(event.target).attr('')
+  const author = $('#quip-author').val()
+  const id = $('#quip-id').val()
+  console.log(author)
+  console.log(id)
   // const formData = getFormFields(form)
-  api.updateQuip(formData)
+  api.updateQuip(author, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }
@@ -42,9 +45,20 @@ const onShowQuip = function (event) {
     .catch(ui.onShowQuipFailure)
 }
 
+const onDestroyQuip = function (event) {
+  console.log('onDestroyQuip')
+  event.preventDefault()
+  const id = $('#destroy-quip').val()
+  console.log(id)
+  api.destroyQuip(id)
+    .then(ui.onDestroyQuipSuccess)
+    .catch(ui.onDestroyQuipFailure)
+}
+
 module.exports = {
   onCreateQuip,
   onGetQuip,
   onUpdateQuip,
-  onShowQuip
+  onShowQuip,
+  onDestroyQuip
 }
