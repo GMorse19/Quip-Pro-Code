@@ -14,12 +14,16 @@ const failureMessage = function (newText) {
   $('#message').addClass('failure')
 }
 
-const onCreateQuipSuccess = function (responseData) {
+const onCreateQuipSuccess = function (data) {
+  $('#new-quip').hide()
   $('#new-quip').trigger('reset')
-  console.log(responseData.quip.content)
-  store.quip = responseData.quip
-  console.log('onCreateQuipSuccess ' + store.quip.content)
-  successMessage('Create worked')
+  console.log(data.quip.content)
+  store.quip = data.quip
+  console.log('onCreateQuipSuccess ' + store.quip.id)
+  const showQuipsHtml = showQuipsTemplate({ quips: data })
+  $('.content').empty()
+  $('.content').append(showQuipsHtml)
+  successMessage('Wonderful Quote!')
 }
 
 const onCreateQuipFailure = function () {
@@ -32,7 +36,7 @@ const onGetQuipSuccess = function (data) {
   console.log(data)
   console.log('onGetQuipSuccess ' + data.quips[0].content)
   const showQuipsHtml = showQuipsTemplate({ quips: data.quips })
-  successMessage('It worked')
+  successMessage('Here are your quotes ' + store.user.email)
   $('.content').empty()
   $('.content').append(showQuipsHtml)
 }
@@ -48,7 +52,10 @@ const onUpdateSuccess = function (data) {
   // $('#quip-author').trigger('reset')
   console.log(data)
   console.log('onUpdateQuipSuccess')
-  successMessage('onUpdateQuip worked!')
+  const showQuipsHtml = showQuipsTemplate({ quips: data })
+  successMessage('Your quote has been updated!')
+  $('.content').empty()
+  $('.content').append(showQuipsHtml)
 }
 
 const onUpdateFailure = function () {
@@ -63,19 +70,23 @@ const onShowQuipSuccess = function (data) {
   $('.content').append(showQuipsHtml)
   console.log(data)
   console.log('onShowQuipSuccess' + data)
+  successMessage('Is this what you were looking for?')
 }
 
 const onShowQuipFailure = function () {
-  console.log('onShowQuipFailure')
+  failureMessage('Sorry, something went wrong. Please try again.')
 }
 
 const onDestroyQuipSuccess = function () {
+  $('.content').empty()
   $('#delete-quip').trigger('reset')
   console.log('onDestroyQuipSuccess')
+  successMessage('Your quote with Id: ' + store.quote_id + ' was destroyed.')
 }
 
 const onDestroyQuipFailure = function () {
   console.log('onDestroyQuipFailure')
+  failureMessage('Sorry, something went wrong. Please try again.')
 }
 
 module.exports = {

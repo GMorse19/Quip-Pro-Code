@@ -1,9 +1,22 @@
 'use strict'
 
-// const store = require('../store')
+const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
+
+const successMessage = function (newText) {
+  $('#message').text(newText)
+  $('#message').removeClass('failure')
+  $('#message').addClass('success')
+  $('form').trigger('reset')
+}
+
+const failureMessage = function (newText) {
+  $('#message').text(newText)
+  $('#message').removeClass('success')
+  $('#message').addClass('failure')
+}
 
 const onCreateQuip = function (event) {
   event.preventDefault()
@@ -20,6 +33,7 @@ const onGetQuip = function (event) {
   $('#update-quip').hide()
   $('#new-quip').hide()
   $('#delete-quip').hide()
+  $('#option-barTwo').show()
   console.log('onGetQuip')
   event.preventDefault()
   api.getQuip()
@@ -42,6 +56,7 @@ const onUpdateQuip = function (event) {
 const onShowQuip = function (event) {
   console.log('onShowQuip')
   event.preventDefault()
+  $('#option-barTwo').show()
   const id = $('#find-quip').val()
   console.log(id)
   api.showQuip(id)
@@ -53,6 +68,7 @@ const onDestroyQuip = function (event) {
   console.log('onDestroyQuip')
   event.preventDefault()
   const id = $('#destroy-quip').val()
+  store.quote_id = id
   console.log(id)
   api.destroyQuip(id)
     .then(ui.onDestroyQuipSuccess)
@@ -60,6 +76,8 @@ const onDestroyQuip = function (event) {
 }
 
 const findQuote = function () {
+  successMessage('Selct your qoute.')
+  $('#option-barTwo').hide()
   $('.content').empty()
   $('#show-quip').show()
   $('#update-quip').hide()
@@ -68,7 +86,8 @@ const findQuote = function () {
 }
 
 const updateQuote = function () {
-  $('.content').empty()
+  successMessage('Update your quote.')
+  // $('.content').empty()
   $('#update-quip').show()
   $('#show-quip').hide()
   $('#new-quip').hide()
@@ -76,6 +95,8 @@ const updateQuote = function () {
 }
 
 const addQuote = function () {
+  successMessage('Create your quote.')
+  $('#option-barTwo').hide()
   $('#new-quip').show()
   $('#update-quip').hide()
   $('#show-quip').hide()
@@ -84,7 +105,8 @@ const addQuote = function () {
 }
 
 const destroyQuote = function () {
-  $('.content').empty()
+  successMessage('Destroy a quote by ID.')
+  // $('.content').empty()
   $('#delete-quip').show()
   $('#new-quip').hide()
   $('#update-quip').hide()
@@ -100,5 +122,7 @@ module.exports = {
   findQuote,
   updateQuote,
   addQuote,
-  destroyQuote
+  destroyQuote,
+  successMessage,
+  failureMessage
 }
