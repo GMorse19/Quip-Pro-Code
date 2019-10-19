@@ -1,0 +1,35 @@
+{{#each quips as |quip|}}
+  {{log quip}}
+  <section data-id="{{quip.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{ quip.content }}
+    </h3>
+    <h6>Author:</h6>
+    <p>
+      {{#if quip.author}}
+        {{quip.author}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p>
+    <h6>Mood:</h6>
+    <p>
+      {{#if quip.mood}}
+        {{quip.mood}}
+      {{else}}
+        No mood provided.
+      {{/if}}
+    </p>
+    <h6>ID:</h6>
+    <p>
+      {{#if quip.id}}
+      {{quip.id}}
+      {{else}}
+      No ID Provided.
+      {{/if}}
+    </p>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}

@@ -16,6 +16,10 @@ const onCreateQuip = function (event) {
 }
 
 const onGetQuip = function (event) {
+  $('#show-quip').hide()
+  $('#update-quip').hide()
+  $('#new-quip').hide()
+  $('#delete-quip').hide()
   console.log('onGetQuip')
   event.preventDefault()
   api.getQuip()
@@ -55,10 +59,46 @@ const onDestroyQuip = function (event) {
     .catch(ui.onDestroyQuipFailure)
 }
 
+const findQuote = function () {
+  $('.content').empty()
+  $('#show-quip').show()
+  $('#update-quip').hide()
+  $('#delete-quip').hide()
+  $('#new-quip').hide()
+}
+
+const updateQuote = function () {
+  $('.content').empty()
+  $('#update-quip').show()
+  $('#show-quip').hide()
+  $('#new-quip').hide()
+  $('#delete-quip').hide()
+}
+
+const addQuote = function () {
+  $('#new-quip').show()
+  $('#update-quip').hide()
+  $('#show-quip').hide()
+  $('#delete-quip').hide()
+  $('.content').empty()
+}
+
+const destroyQuote = function () {
+  $('.content').empty()
+  $('#delete-quip').show()
+  $('#new-quip').hide()
+  $('#update-quip').hide()
+  $('#show-quip').hide()
+}
+
 module.exports = {
   onCreateQuip,
   onGetQuip,
   onUpdateQuip,
   onShowQuip,
-  onDestroyQuip
+  onDestroyQuip,
+  findQuote,
+  updateQuote,
+  addQuote,
+  destroyQuote
 }

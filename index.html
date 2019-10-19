@@ -14,98 +14,91 @@
     <body>
       <header>
         <h1>Quip Pro Code</h1>
-    </header>
-    <section id="forms">
-          <div class="form-field">
-            <div class="inner-wrap">
-              <div class="hide-signUp">
-                <h4>Sign Up</h4>
-                    <form id="sign-up" class="forms">
-                      <input required type="email" name="credentials[email]" placeholder="Enter email...">
-                      <input required type="password" name="credentials[password]" placeholder="Enter Password">
-                      <input required type="password" name="credentials[password_confirmation]" placeholder="Enter Password Again">
-                  <br>
-                      <button>Sign UP</button>
-                      <h3 id="sign-up-message"></h3>
-                    </form>
+      </header>
+        <section id="auth-forms" class="topnav">
+              <div class="form-field">
+                <div class="inner-wrap">
+                  <div class="hide-signUp">
+                    <h4>Sign Up</h4>
+                        <form id="sign-up" class="forms">
+                          <input required type="email" name="credentials[email]" placeholder="Enter email...">
+                          <input required type="password" name="credentials[password]" placeholder="Enter Password">
+                          <input required type="password" name="credentials[password_confirmation]" placeholder="Enter Password Again">
+                      <br>
+                          <button>Sign UP</button>
+                          <h3 id="sign-up-message"></h3>
+                        </form>
+                  </div>
+                    <div class="hide-signIn">
+                        <h4>Sign In</h4>
+                        <form id="sign-in">
+                          <input required type="email" name="credentials[email]" placeholder="Enter email...">
+                          <input required type="password" name="credentials[password]" placeholder="Enter Password">
+                        <br>
+                          <button>Sign In</button>
+                          <h3 id="sign-in-message"></h3>
+                        </form>
+                    </div>
               </div>
-                <div class="hide-signIn">
-                    <h4>Sign In</h4>
-                    <form id="sign-in">
-                      <input required type="email" name="credentials[email]" placeholder="Enter email...">
-                      <input required type="password" name="credentials[password]" placeholder="Enter Password">
-                    <br>
-                      <button>Sign In</button>
-                      <h3 id="sign-in-message"></h3>
-                    </form>
-              </div>
-            <div class="show-signOut">
-              <form id="change-password">
-                <input required type="password" name="passwords[old]" placeholder="Enter Old Password">
-                <input required type="password" name="passwords[new]" placeholder="Enter New Password">
-                <button>Change Password</button>
-              </form>
             </div>
-          </div>
-        </div>
-      </section>
-        <section>
-          <div class="show-signOut">
-            <div class="form-field">
+          </section>
+          <section id="option-bar" class="topnav">
+            <button id="get-quip" name="quotes">Your Quotes</button>
+            <button id="find-quote" name="find-quote">Find A Quote</button>
+            <button id="update-quote" name="update-quote">Update A Quote</button>
+            <button id="add-quote" name="add-quote">Add A Quote</button>
+            <button id="destroy-quote" name="destroy-quote">Delete A Quote</button>
+          </section>
+          <section>
               <div class="inner-wrap">
                 <h3 id="message"></h3>
-
-
               </div>
-            <br>
-
-            <br>
-
-            </div>
-          </div>
-        </section>
-        <section>
-          <h4>Get All Quips</h4>
-          <button id="get-quip">
-            Quips Get
-          </button>
-          <h4>Create Quip</h4>
+          </section>
+        <section id="forms">
               <form id="new-quip" class="forms">
+                <h4>Create Quip</h4>
                 <input required type="text" name="quip[content]" placeholder="Enter quip...">
                 <input required type="text" name="quip[author]" placeholder="Enter Author">
                 <input required type="text" name="quip[mood]" placeholder="Enter Mood">
-          <button>submit quip</button>
-        </form>
-        <h4>Show Quip</h4>
+                <button>submit quip</button>
+              </form>
             <form id="show-quip" class="forms">
+              <h4>Show Quip</h4>
               <input id="find-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
-        <button>show quip</button>
-        <p id="show-message"></p>
-      </form>
-      <h4>Delete Quip</h4>
-          <form id="delete-quip" class="forms">
-            <input id="destroy-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
-      <button>Destroy quip</button>
-      <p id="show-message"></p>
-    </form>
-        <h4>Update Quip</h4>
+              <button>show quip</button>
+              <p id="show-message"></p>
+            </form>
+            <form id="delete-quip" class="forms">
+              <h4>Delete Quip</h4>
+              <input id="destroy-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
+              <button>Destroy quip</button>
+              <p id="show-message"></p>
+            </form>
             <form id="update-quip" class="forms">
+              <h4>Update Quip</h4>
               <input required id="quip-id" type="text" name="quip[id]" placeholder="Enter quip id...">
               <input required id="quip-author" type="text" name="quip[author]" placeholder="Enter Author">
               <!-- <input required id="quip-mood" type="text" name="quip[mood]" placeholder="Enter Mood"> -->
-        <button>update quip</button>
-      </form>
+              <button>update quip</button>
+            </form>
+          </section>
       <br>
-
-          <div class="show-signOut">
-              <div class="inner-wrap">
-                <form id="sign-out">
-                  <button class="new-out">Sign Out</button>
-                </form>
-              </div>
-          </div>
-        </section>
         <section class="content"></section>
-
+      <br>
+        <div class="show-signOut">
+            <div class="inner-wrap">
+              <form id="sign-out">
+                <button class="new-out">Sign Out</button>
+              </form>
+            </div>
+        </div>
+        <br>
+        <div class="show-signOut">
+          <form id="change-password">
+            <input required type="password" name="passwords[old]" placeholder="Enter Old Password">
+            <input required type="password" name="passwords[new]" placeholder="Enter New Password">
+            <button>Change Password</button>
+          </form>
+        </div>
       </body>
-      </html>
+  </html>

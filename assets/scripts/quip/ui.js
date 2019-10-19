@@ -15,6 +15,7 @@ const failureMessage = function (newText) {
 }
 
 const onCreateQuipSuccess = function (responseData) {
+  $('#new-quip').trigger('reset')
   console.log(responseData.quip.content)
   store.quip = responseData.quip
   console.log('onCreateQuipSuccess ' + store.quip.content)
@@ -32,6 +33,7 @@ const onGetQuipSuccess = function (data) {
   console.log('onGetQuipSuccess ' + data.quips[0].content)
   const showQuipsHtml = showQuipsTemplate({ quips: data.quips })
   successMessage('It worked')
+  $('.content').empty()
   $('.content').append(showQuipsHtml)
 }
 
@@ -40,18 +42,25 @@ const onGetQuipFailure = function () {
   failureMessage('WRONG!')
 }
 
-const onUpdateQuipSuccess = function (data) {
+const onUpdateSuccess = function (data) {
+  $('#update-quip').trigger('reset')
+  // $('#quip-id').trigger('reset')
+  // $('#quip-author').trigger('reset')
   console.log(data)
   console.log('onUpdateQuipSuccess')
   successMessage('onUpdateQuip worked!')
 }
 
-const onUpdateQuipFailure = function () {
+const onUpdateFailure = function () {
   console.log('onUpdateQuipFailure')
   failureMessage('WRONG!')
 }
 
 const onShowQuipSuccess = function (data) {
+  $('.content').empty()
+  $('#show-quip').trigger('reset')
+  const showQuipsHtml = showQuipsTemplate({ quips: data })
+  $('.content').append(showQuipsHtml)
   console.log(data)
   console.log('onShowQuipSuccess' + data)
 }
@@ -61,6 +70,7 @@ const onShowQuipFailure = function () {
 }
 
 const onDestroyQuipSuccess = function () {
+  $('#delete-quip').trigger('reset')
   console.log('onDestroyQuipSuccess')
 }
 
@@ -73,8 +83,8 @@ module.exports = {
   onCreateQuipFailure,
   onGetQuipSuccess,
   onGetQuipFailure,
-  onUpdateQuipSuccess,
-  onUpdateQuipFailure,
+  onUpdateSuccess,
+  onUpdateFailure,
   onShowQuipSuccess,
   onShowQuipFailure,
   onDestroyQuipSuccess,
