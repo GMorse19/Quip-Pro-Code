@@ -80,6 +80,7 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function () {
+  $('#option-barTwo').hide()
   $('#option-bar').hide()
   $('#delete-quip').hide()
   $('#new-quip').hide()

@@ -44,11 +44,13 @@ const onGetQuip = function (event) {
 const onUpdateQuip = function (event) {
   event.preventDefault()
   const author = $('#quip-author').val()
+  const content = $('#quip-content').val()
+  const mood = $('#quip-mood').val()
   const id = $('#quip-id').val()
   console.log(author)
   console.log(id)
   // const formData = getFormFields(form)
-  api.updateQuip(author, id)
+  api.updateQuip(content, author, mood, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }
@@ -88,6 +90,7 @@ const findQuote = function () {
 const updateQuote = function () {
   successMessage('Update your quote.')
   // $('.content').empty()
+  // $('#id-update').show()
   $('#update-quip').show()
   $('#show-quip').hide()
   $('#new-quip').hide()
@@ -112,6 +115,16 @@ const destroyQuote = function () {
   $('#update-quip').hide()
   $('#show-quip').hide()
 }
+
+// const idUpdate = function () {
+//   successMessage('Update your quote.')
+//   // $('.content').empty()
+//   // $('#update-quip').show()
+//   // $('#id-update').hide()
+//   // $('#show-quip').hide()
+//   // $('#new-quip').hide()
+//   // $('#delete-quip').hide()
+// }
 
 module.exports = {
   onCreateQuip,

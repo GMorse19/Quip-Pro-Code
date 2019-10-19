@@ -25,7 +25,7 @@ const getQuip = function () {
   })
 }
 
-const updateQuip = function (author, id) {
+const updateQuip = function (content, author, mood, id) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + `/quips/${id}`,
@@ -34,7 +34,9 @@ const updateQuip = function (author, id) {
     },
     data: {
       'quip': {
-        'author': author
+        'content': content,
+        'author': author,
+        'mood': mood
       }
     }
   })

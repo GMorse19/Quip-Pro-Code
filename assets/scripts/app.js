@@ -16,6 +16,7 @@ $(() => {
   $('#show-quip').hide()
   $('#delete-quip').hide()
   $('#update-quip').hide()
+  $('#id-update').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
@@ -29,4 +30,5 @@ $(() => {
   $('#update-quote').on('click', quipEvents.updateQuote)
   $('#add-quote').on('click', quipEvents.addQuote)
   $('#destroy-quote').on('click', quipEvents.destroyQuote)
+  // $('#quip-id').on('submit', quipEvents.idUpdate)
 })
