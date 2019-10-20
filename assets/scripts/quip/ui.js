@@ -28,7 +28,7 @@ const onCreateQuipSuccess = function (data) {
 
 const onCreateQuipFailure = function () {
   console.log('onCreateGameFailure')
-  failureMessage('WRONG!')
+  failureMessage('Sorry, something went wrong. Please try again.')
 }
 
 const onGetQuipSuccess = function (data) {
@@ -43,7 +43,7 @@ const onGetQuipSuccess = function (data) {
 
 const onGetQuipFailure = function () {
   console.log('onGetGameFailure')
-  failureMessage('WRONG!')
+  failureMessage('Sorry, something went wrong. Please try again.')
 }
 
 const onUpdateSuccess = function (data) {
@@ -60,7 +60,7 @@ const onUpdateSuccess = function (data) {
 
 const onUpdateFailure = function () {
   console.log('onUpdateQuipFailure')
-  failureMessage('WRONG!')
+  failureMessage('Sorry, something went wrong. Please try again.')
 }
 
 const onShowQuipSuccess = function (data) {

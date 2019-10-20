@@ -1,10 +1,10 @@
 {{#each quips as |quip|}}
   {{log quip}}
   <section data-id="{{quip.id}}">
-    <h6>Title:</h6>
-    <h3>
-      {{ quip.content }}
-    </h3>
+
+    <h1>
+      "{{ quip.content }}"
+    </h1>
     <h6>Author:</h6>
     <p>
       {{#if quip.author}}

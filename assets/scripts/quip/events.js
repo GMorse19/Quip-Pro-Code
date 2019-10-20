@@ -116,6 +116,22 @@ const destroyQuote = function () {
   $('#show-quip').hide()
 }
 
+const showSignup = function () {
+  successMessage('Please SIGN UP!')
+  $('.hide-signUp').show()
+  $('#sign-in').hide()
+  $('#show-signup-forms').hide()
+  $('#show-signin-forms').show()
+}
+
+const showSignin = function () {
+  successMessage('Please SIGN in!')
+  $('.hide-signUp').hide()
+  $('#sign-in').show()
+  $('#show-signup-forms').show()
+  $('#show-signin-forms').hide()
+}
+
 // const idUpdate = function () {
 //   successMessage('Update your quote.')
 //   // $('.content').empty()
@@ -137,5 +153,7 @@ module.exports = {
   addQuote,
   destroyQuote,
   successMessage,
-  failureMessage
+  failureMessage,
+  showSignup,
+  showSignin
 }

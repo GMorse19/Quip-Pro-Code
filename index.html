@@ -12,13 +12,15 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <section class="sticky topnav">
       <header>
         <h1>Quip Pro Code</h1>
       </header>
         <section id="auth-forms" class="topnav">
-              <div class="form-field">
-                <div class="inner-wrap">
-                  <div class="hide-signUp">
+              <!-- <div class="form-field"> -->
+                <!-- <div class="inner-wrap"> -->
+
+                  <!-- <div class="hide-signUp">
                     <h4>Sign Up</h4>
                         <form id="sign-up" class="forms">
                           <input required type="email" name="credentials[email]" placeholder="Enter email...">
@@ -28,20 +30,43 @@
                           <button>Sign UP</button>
                           <h3 id="sign-up-message"></h3>
                         </form>
-                  </div>
+                  </div> -->
+                  <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+                  <div class="login">
+                    <div class="login-header">
                     <div class="hide-signIn">
-                        <h4>Sign In</h4>
+                        <!-- <h1>Quip Pro Code</h1> -->
+                        <div class="login-form">
                         <form id="sign-in">
-                          <input required type="email" name="credentials[email]" placeholder="Enter email...">
+                          <h3>Email:</h3>
+                          <input required type="email" name="credentials[email]" placeholder="Enter email..."><br>
+                          <h3>Password:</h3>
                           <input required type="password" name="credentials[password]" placeholder="Enter Password">
                         <br>
-                          <button>Sign In</button>
-                          <h3 id="sign-in-message"></h3>
+                          <button class="login-button">Sign In</button>
+                          <h6 id="sign-in-message"></h6>
                         </form>
+                        <div class="hide-signUp">
+                          <h4>Sign Up</h4>
+                              <form id="sign-up" class="forms">
+                                <input required type="email" name="credentials[email]" placeholder="Enter email...">
+                                <input required type="password" name="credentials[password]" placeholder="Enter Password">
+                                <input required type="password" name="credentials[password_confirmation]" placeholder="Enter Password Again">
+                            <br>
+                                <button>Sign UP</button>
+                                <h6 id="sign-up-message"></h6>
+                              </form>
+                            </div>
+                            <button id="show-signup-forms">Go to Sign Up</button>
+                            <button id="show-signin-forms">Go to Sign In</button>
+                        </div>
                     </div>
-              </div>
-            </div>
+                  </div>
+                  </div>
+              <!-- </div> -->
+            <!-- </div> -->
           </section>
+
           <section id="option-bar" class="topnav">
             <button id="get-quip" name="quotes">Your Quotes</button>
             <button id="find-quote" name="find-quote">Find A Quote</button>
@@ -92,9 +117,23 @@
             <button id="update-quote" name="update-quote">Update A Quote</button>
             <button id="destroy-quote" name="destroy-quote">Delete A Quote</button>
           </section>
+
+
+          <!-- <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div> -->
+
+
+        </section>
       <br>
         <section class="content"></section>
       <br>
+      <section class="footer">
         <div class="show-signOut">
             <div class="inner-wrap">
               <form id="sign-out">
@@ -110,5 +149,6 @@
             <button>Change Password</button>
           </form>
         </div>
+      </section>
       </body>
   </html>

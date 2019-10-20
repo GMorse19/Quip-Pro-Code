@@ -8,6 +8,8 @@ const quipEvents = require('./quip/events.js')
 // require('./example')
 
 $(() => {
+  $('#show-signin-forms').hide()
+  $('.hide-signUp').hide()
   $('.show-signOut').hide()
   $('#option-bar').hide()
   $('#option-barTwo').hide()
@@ -31,4 +33,6 @@ $(() => {
   $('#add-quote').on('click', quipEvents.addQuote)
   $('#destroy-quote').on('click', quipEvents.destroyQuote)
   // $('#quip-id').on('submit', quipEvents.idUpdate)
+  $('#show-signup-forms').on('click', quipEvents.showSignup)
+  $('#show-signin-forms').on('click', quipEvents.showSignin)
 })
