@@ -11,7 +11,7 @@ h2 {
 
 h1 {
   font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
-  font-size: 50px;
+  font-size: 60px;
   // padding: 50px 20px;
   text-align: center;
   text-transform: uppercase;
@@ -27,8 +27,8 @@ h1 {
       -2px 4px 1px #767474,
       -3px 6px 1px #787777,
       -4px 8px 1px #7b7a7a,
-      -5px 10px 1px #7f7d7d,
-      -6px 12px 1px #828181
+      -5px 10px 1px #7f7d7d
+      // -6px 12px 1px #828181,
       // -7px 14px 1px #868585,
       // -8px 16px 1px #8b8a89,
       // -9px 18px 1px #8f8e8d,
@@ -52,6 +52,14 @@ h1 {
       // -27px 54px 1px #e2e0df,
       // -28px 56px 1px #e4e3e2;
   }
+}
+
+@media only screen and (max-width: 600px) {
+
+   h1 {
+      font-size: 2em;
+   }
+
 }
 
 .box {

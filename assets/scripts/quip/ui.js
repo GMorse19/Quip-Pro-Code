@@ -33,17 +33,14 @@ const onCreateQuipFailure = function () {
 
 const onGetQuipSuccess = function (data) {
   store.quips = data.quips
-  console.log(store.quips)
-  console.log(data)
   if (data.quips < 1) {
     failureMessage('Sorry, try adding a quote first')
   } else {
-  // console.log('onGetQuipSuccess ' + data.quips[0].content)
-  const showQuipsHtml = showQuipsTemplate({ quips: data.quips })
-  successMessage('Here are your quotes ' + store.user.email)
-  $('.content').empty()
-  $('.content').append(showQuipsHtml)
-}
+    const showQuipsHtml = showQuipsTemplate({ quips: data.quips })
+    successMessage('Here are your quotes ' + store.user.email)
+    $('.content').empty()
+    $('.content').append(showQuipsHtml)
+  }
 }
 
 const onGetQuipFailure = function () {
@@ -68,6 +65,8 @@ const onUpdateFailure = function () {
 
 const onShowQuipSuccess = function (data) {
   $('.content').empty()
+  $('#update-quip').hide()
+  $('#delete-quip').hide()
   $('#option-barTwo').show()
   $('#show-quip').trigger('reset')
   const showQuipsHtml = showQuipsTemplate({ quips: data })
@@ -79,6 +78,8 @@ const onShowQuipSuccess = function (data) {
 
 const onShowQuipFailure = function () {
   $('.content').empty()
+  $('#update-quip').hide()
+  $('#delete-quip').hide()
   $('#show-quip').trigger('reset')
   failureMessage('Sorry, something went wrong. Please try again.')
 }

@@ -117,19 +117,11 @@ const randomQuote = function () {
   if (store.quips.length < 1) {
     return failureMessage('Sorry. You have no quotes.')
   } else {
-  const randomChoice = store.quips[Math.floor(Math.random() * store.quips.length)]
-  const id = randomChoice.id
-  // const showQuipsHtml = showQuipsTemplate({ quips: randomChoice })
-  // $('.content').empty()
-  // $('.content').append(showQuipsHtml)
-  // successMessage('Not a bad choice!')
-  // $('#delete-quip').hide()
-  // $('#new-quip').hide()
-  // $('#update-quip').hide()
-  // $('#show-quip').hide()
-  api.showQuip(id)
-    .then(ui.onShowQuipSuccess)
-    .catch(ui.onShowQuipFailure)
+    const randomChoice = store.quips[Math.floor(Math.random() * store.quips.length)]
+    const id = randomChoice.id
+    api.showQuip(id)
+      .then(ui.onShowQuipSuccess)
+      .catch(ui.onShowQuipFailure)
   }
 }
 
