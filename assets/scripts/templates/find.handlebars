@@ -1,34 +1,28 @@
-{{#each quips as |quip|}}
-  {{log quip}}
-  <section data-id="{{quip.id}}">
-    <h6>Title:</h6>
-    <h3>
-      {{ quip.content }}
-    </h3>
-    <h6>Author:</h6>
-    <p>
-      {{#if quip.author}}
-        {{quip.author}}
+{{#each quotes as |quote|}}
+  {{log quote}}
+  <section id="handlebars" data-id="{{quote.id}}">
+
+    <h2 class="box box-width notepaper curly-quotes">
+      "{{ quote.content }}"
+    </h2>
+    <h6 class="box box-width quote by" class="quote-info">by
+      {{#if quote.author}}
+        {{quote.author}}
       {{else}}
         No author provided.
       {{/if}}
-    </p>
-    <h6>Mood:</h6>
-    <p>
-      {{#if quip.mood}}
-        {{quip.mood}}
-      {{else}}
-        No mood provided.
-      {{/if}}
-    </p>
-    <h6>ID:</h6>
-    <p>
-      {{#if quip.id}}
-      {{quip.id}}
-      {{else}}
-      No ID Provided.
-      {{/if}}
-    </p>
+    </h6>
+    <h6 class="quote-info">Mood: {{#if quote.mood}}
+      {{quote.mood}}
+    {{else}}
+      No mood provided.
+    {{/if}}
+  </h6>
+    <!-- <h6 class="quote-info">ID: {{#if quote.id}}
+    {{quote.id}}
+    {{else}}
+    No ID Provided.
+    {{/if}}</h6> -->
     <!-- {{> partial}} -->
   </section>
 

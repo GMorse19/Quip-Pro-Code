@@ -4,6 +4,7 @@ const store = require('../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
+// const showQuipsTemplate = require('../templates/quip.handlebars')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
@@ -25,17 +26,16 @@ const onCreateQuip = function (event) {
   api.createQuip(formData)
     .then(ui.onCreateQuipSuccess)
     .catch(ui.onCreateQuipFailure)
-  // $('.box').text('')
 }
 
 const onGetQuip = function (event) {
+  event.preventDefault()
   $('#show-quip').hide()
   $('#update-quip').hide()
   $('#new-quip').hide()
   $('#delete-quip').hide()
   $('#option-barTwo').show()
-  console.log('onGetQuip')
-  event.preventDefault()
+  // console.log('onGetQuip')
   api.getQuip()
     .then(ui.onGetQuipSuccess)
     .catch(ui.onGetQuipFailure)
@@ -47,31 +47,30 @@ const onUpdateQuip = function (event) {
   const content = $('#quip-content').val()
   const mood = $('#quip-mood').val()
   const id = $('#quip-id').val()
-  console.log(author)
-  console.log(id)
-  // const formData = getFormFields(form)
+  // console.log(author)
+  // console.log(id)
   api.updateQuip(content, author, mood, id)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }
 
 const onShowQuip = function (event) {
-  console.log('onShowQuip')
+  // console.log('onShowQuip')
   event.preventDefault()
-  $('#option-barTwo').show()
+  // $('#option-barTwo').show()
   const id = $('#find-quip').val()
-  console.log(id)
+  // console.log(id)
   api.showQuip(id)
     .then(ui.onShowQuipSuccess)
     .catch(ui.onShowQuipFailure)
 }
 
 const onDestroyQuip = function (event) {
-  console.log('onDestroyQuip')
+  // console.log('onDestroyQuip')
   event.preventDefault()
   const id = $('#destroy-quip').val()
   store.quote_id = id
-  console.log(id)
+  // console.log(id)
   api.destroyQuip(id)
     .then(ui.onDestroyQuipSuccess)
     .catch(ui.onDestroyQuipFailure)
@@ -89,8 +88,6 @@ const findQuote = function () {
 
 const updateQuote = function () {
   successMessage('Update your quote.')
-  // $('.content').empty()
-  // $('#id-update').show()
   $('#update-quip').show()
   $('#show-quip').hide()
   $('#new-quip').hide()
@@ -109,11 +106,31 @@ const addQuote = function () {
 
 const destroyQuote = function () {
   successMessage('Destroy a quote by ID.')
-  // $('.content').empty()
   $('#delete-quip').show()
   $('#new-quip').hide()
   $('#update-quip').hide()
   $('#show-quip').hide()
+}
+
+const randomQuote = function () {
+  console.log(store.quips)
+  if (store.quips.length < 1) {
+    return failureMessage('Sorry. You have no quotes.')
+  } else {
+  const randomChoice = store.quips[Math.floor(Math.random() * store.quips.length)]
+  const id = randomChoice.id
+  // const showQuipsHtml = showQuipsTemplate({ quips: randomChoice })
+  // $('.content').empty()
+  // $('.content').append(showQuipsHtml)
+  // successMessage('Not a bad choice!')
+  // $('#delete-quip').hide()
+  // $('#new-quip').hide()
+  // $('#update-quip').hide()
+  // $('#show-quip').hide()
+  api.showQuip(id)
+    .then(ui.onShowQuipSuccess)
+    .catch(ui.onShowQuipFailure)
+  }
 }
 
 const showSignup = function () {
@@ -132,16 +149,6 @@ const showSignin = function () {
   $('#show-signin-forms').hide()
 }
 
-// const idUpdate = function () {
-//   successMessage('Update your quote.')
-//   // $('.content').empty()
-//   // $('#update-quip').show()
-//   // $('#id-update').hide()
-//   // $('#show-quip').hide()
-//   // $('#new-quip').hide()
-//   // $('#delete-quip').hide()
-// }
-
 module.exports = {
   onCreateQuip,
   onGetQuip,
@@ -152,6 +159,7 @@ module.exports = {
   updateQuote,
   addQuote,
   destroyQuote,
+  randomQuote,
   successMessage,
   failureMessage,
   showSignup,

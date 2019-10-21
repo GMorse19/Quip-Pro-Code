@@ -33,11 +33,6 @@ const onChangePassword = function (event) {
 
 const onSignOut = function () {
   event.preventDefault()
-  // $('.hide-signUp').show()
-  // $('.hide-signIn').show()
-  // $('.show-signOut').hide()
-  // $('.show-gameBoard').hide()
-  // $('#comp-move').hide()
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)

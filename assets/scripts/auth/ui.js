@@ -1,7 +1,8 @@
 'use strict'
 
 const store = require('../store')
-// const events = require('./events')
+const showQuipsTemplate = require('../templates/find.handlebars')
+const api = require('./api')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
@@ -14,46 +15,14 @@ const failureMessage = function (newText) {
   $('#message').removeClass('success')
   $('#message').addClass('failure')
 }
-// const signUpSuccessMessage = function (newText) {
-//   $('.content').empty()
-//   $('#message').text(newText)
-//   $('#message').removeClass('success')
-//   $('#message').addClass('failure')
-// }
 
-// const signUpFailureMessage = function (newText) {
-//   $('.content').empty()
-//   $('#message').text(newText)
-//   $('#message').removeClass('success')
-//   $('#message').addClass('failure')
-// }
-//
-// const onSignInFailureMessage = function (newText) {
-//   $('.content').empty()
-//   $('#message').text(newText)
-//   $('#message').removeClass('success')
-//   $('#message').addClass('failure')
-// }
-
-const onSignUpSuccess = function (responseData) {
-  // $('#sign-up').trigger('reset')
-  // $('#option-bar').show()
-  // // $('#forms').show()
-  // $('.content').empty()
-  // $('#sign-in').trigger('reset')
-  // $('.hide-signUp').hide()
-  // $('.hide-signIn').hide()
-  // $('.show-signOut').show()
-  // signUpFailureMessage('')
-  // events.onSignIn(responseData)
-  console.log(responseData)
-  store.user = responseData.user
-  console.log(store.user)
+const onSignUpSuccess = function (data) {
+  store.user = data.user
   $('#show-signin-forms').hide()
   $('#show-signup-forms').show()
   $('.hide-signUp').hide()
   $('#sign-in').show()
-  successMessage('Signed up successfully! ' + store.user.email)
+  successMessage('Signed up successfully! ' + data.user.email)
 }
 
 const onSignUpFailure = function () {
@@ -62,18 +31,25 @@ const onSignUpFailure = function () {
   failureMessage('⚠️Bad Request! Unable to sign up! ⚠️')
 }
 
-const onSignInSuccess = function (responseData) {
+const onSignInSuccess = function (data) {
+  store.user = data.user
   $('#option-bar').show()
-  // $('#forms').show()
   $('.content').empty()
   $('#sign-in').trigger('reset')
   $('.hide-signUp').hide()
   $('.hide-signIn').hide()
   $('.show-signOut').show()
-  // signUpFailureMessage('')
-  store.user = responseData.user
-  console.log(store.user)
-  successMessage('You are now signed in! ' + store.user.email)
+  successMessage('You are now signed in! ' + data.user.email)
+  const starterQuote = {
+    'quote': {
+      'content': 'Have no fear of perfection, You will never achieve it.',
+      'author': 'Salvador Dali',
+      'mood': 'Surreal'
+    }
+  }
+  const quotes = starterQuote
+  const showQuipsHtml = showQuipsTemplate({ quotes: quotes })
+  $('.content').append(showQuipsHtml)
 }
 
 const onSignInFailure = function () {
@@ -95,25 +71,22 @@ const onChangePasswordFailure = function () {
 }
 
 const onSignOutSuccess = function () {
+  $('.show-signOut').hide()
   $('#option-barTwo').hide()
   $('#option-bar').hide()
   $('#delete-quip').hide()
   $('#new-quip').hide()
   $('#update-quip').hide()
   $('#show-quip').hide()
-  $('.content').empty()
-  // $('.hide-signUp').show()
   $('.hide-signIn').show()
-  // $('#change-password').hide()
+  $('.content').empty()
   $('#sign-up').trigger('reset')
   $('#change-password').trigger('reset')
-  successMessage('You have signed out. Thanks for visiting! Come back soon.')
-  $('.show-signOut').hide()
+  successMessage('Thanks for visiting! Come back soon.')
 }
 
 const onSignOutFailure = function () {
   failureMessage('⚠️You did not sign out successfully!⚠️')
-  // $('#counter').hide()
 }
 
 module.exports = {
