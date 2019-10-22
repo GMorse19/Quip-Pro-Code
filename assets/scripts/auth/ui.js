@@ -43,7 +43,7 @@ const onSignInSuccess = function (data) {
   successMessage('Welcome ' + data.user.email + '!')
   const starterQuote = {
     'quote': {
-      'content': 'Have no fear of perfection, You will never achieve it.',
+      'content': 'Have no fear of perfection, you will never achieve it.',
       'author': 'Salvador Dali',
       'mood': 'Surreal'
     }

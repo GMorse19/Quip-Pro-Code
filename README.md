@@ -14,7 +14,6 @@ database of all their favorite quotes and refernce them in times of despair.
 HTML
 css
 javascript
-bootstrap
 handlebars
 Jquery
 ajax
@@ -81,6 +80,8 @@ to really take a crack at a full makeover for the project.
 You can find my API <a href="https://github.com/GMorse19/project-2-api.git">here</a>.
 
 You can find my Browser <a href="https://gmorse19.github.io/project-2-browser-GMorse/">here</a>.
+
+You can find my deployed Heroku site <a href="https://pacific-harbor-41390.herokuapp.com/">here</a>.
 
 <a href="https://imgur.com/ROJkHeH">Wire Frames</a>
 
