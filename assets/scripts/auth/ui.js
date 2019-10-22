@@ -2,7 +2,6 @@
 
 const store = require('../store')
 const showQuipsTemplate = require('../templates/find.handlebars')
-const api = require('./api')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
@@ -39,7 +38,9 @@ const onSignInSuccess = function (data) {
   $('.hide-signUp').hide()
   $('.hide-signIn').hide()
   $('.show-signOut').show()
-  successMessage('You are now signed in! ' + data.user.email)
+  $('#show-password').show()
+  $('#change-password').hide()
+  successMessage('Welcome ' + data.user.email + '!')
   const starterQuote = {
     'quote': {
       'content': 'Have no fear of perfection, You will never achieve it.',
