@@ -80,6 +80,7 @@ const onShowQuipFailure = function () {
 const onDestroyQuipSuccess = function () {
   $('.content').empty()
   $('#delete-quip').trigger('reset')
+  $('#delete-quip').hide()
   successMessage('Your quote with Id: ' + store.quote_id + ' was destroyed.')
 }
 

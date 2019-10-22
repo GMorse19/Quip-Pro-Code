@@ -71,10 +71,16 @@ body {
 }
 
 .footer {
+  font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  overflow: hidden;
+  border-width: 5px;
+  border-bottom-style: ridge;
+  border-top-style: ridge;
+  background-blend-mode: lighten;
   background-color: #333;
   color: white;
   text-align: center;
@@ -115,6 +121,8 @@ span {
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   border-radius: 3px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .button:hover {
@@ -146,5 +154,8 @@ span {
     content: '\201D';
     margin-left: 1px;
     margin-right: -4px;
+  }
+  .button {
+    font-size: .25em;
   }
 }

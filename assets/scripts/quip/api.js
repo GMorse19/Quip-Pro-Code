@@ -4,7 +4,6 @@ const config = require('../config')
 const store = require('../store')
 
 const createQuip = function (formData) {
-  console.log('createQuip')
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/quips',

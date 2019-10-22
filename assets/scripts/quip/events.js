@@ -11,7 +11,13 @@ const evilQuotes = ['Your Momma!', 'Nice shirt!',
   'I can only explain it to you, I can not understand it for you.',
   "You're about as useful as a screen door in a submarine.",
   "I envy everyone you have never met.", "The first step towards failure, is trying.",
-  "If I wanted to kill myself, I'd climb up your ego and jump down to your IQ level."
+  "If I wanted to kill myself, I'd climb up your ego and jump down to your IQ level.",
+  "People like you are the reason we have middle fingers.",
+  "Tell me… Is being stupid a profession or are you just gifted?",
+  "I’ll try being nicer, if you try being smarter.",
+  "Scientists are trying to figure out how long human can live without a brain. You can tell them your age.",
+  "Stupidity is not a crime so you are free to go.",
+  "Is that your face or did your neck throw up?"
 ]
 
 const goodQuotes = ["Don't limit your challenges, challenge your limits.",
@@ -19,7 +25,14 @@ const goodQuotes = ["Don't limit your challenges, challenge your limits.",
   "Falling down is an accident; Staying down is a choice.",
   "The which does not kill you, only makes you stronger.", "Wake up. Kick ass. Repeat.",
   "Take your dreams seriously.", "If opportunity doesn't knock, build a door.",
-  "Only dead fish go with the flow."
+  "Only dead fish go with the flow.",
+  "Our character is not defined in the good times, but in the hard times.",
+  "Quitters never win. Winners never quit!",
+  "Remember to focus on goals that are within your control. ",
+  "Even if you fall on your face, you’re still moving forward.",
+  "Successful men and women keep moving. They make mistakes but they don’t quit.",
+  "If at first you don’t succeed, then skydiving definitely isn’t for you.",
+  "No matter where you go, there you are."
 ]
 
 const successMessage = function(newText) {
