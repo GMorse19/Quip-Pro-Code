@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Quip Pro Code</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <section class="sticky topnav">
+    <header>
+      <h1 class="elegantshadow">Quip Pro Code</h1>
+    </header>
+    <section id="auth-forms" class="topnav">
+      <div class="login">
+        <div class="login-header">
+          <div class="hide-signIn">
+            <div class="login-form">
+              <form id="sign-in">
+                <h3>Email:</h3>
+                <input required type="email" name="credentials[email]" placeholder="Enter email..."><br>
+                <h3>Password:</h3>
+                <input required type="password" name="credentials[password]" placeholder="Enter Password">
+                <br><br>
+                <button class="login-button button">Sign In</button>
+                <h6 id="sign-in-message"></h6>
+              </form>
+              <div class="hide-signUp">
+                <h4>Sign Up</h4>
+                <form id="sign-up" class="forms">
+                  <input required type="email" name="credentials[email]" placeholder="Enter email...">
+                  <input required type="password" name="credentials[password]" placeholder="Enter Password">
+                  <input required type="password" name="credentials[password_confirmation]" placeholder="Enter Password Again">
+                  <br><br>
+                  <button class="button">Sign UP</button>
+                  <h6 id="sign-up-message"></h6>
+                </form>
+              </div>
+              <br>
+              <button class="button" id="show-signup-forms">Go to Sign Up</button>
+              <button class="button" id="show-signin-forms">Go to Sign In</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="option-bar" class="topnav">
+      <button class="button" id="get-quip" name="quotes">Your Quotes</button>
+      <button class="button" id="find-quote" name="find-quote">Find A Quote</button>
+      <button class="button" id="add-quote" name="add-quote">Add A Quote</button>
+    </section>
+    <section>
+      <div class="inner-wrap">
+        <h3 id="message"></h3>
+      </div>
+    </section>
+    <section id="forms">
+      <form id="new-quip" class="forms">
+        <input required type="text" name="quip[content]" placeholder="Enter quote...">
+        <input required type="text" name="quip[author]" placeholder="Enter Author">
+        <input required type="text" name="quip[mood]" placeholder="Enter Mood">
+        <button class="button">Submit Quote</button>
+      </form>
+      <form id="show-quip" class="forms">
+        <input id="find-quip" required type="text" name="quip[id]" placeholder="Enter quip ID...">
+        <button class="button">Show Quote</button>
+      </form>
+      <form id="delete-quip" class="forms">
+        <input id="destroy-quip" required type="text" name="quip[id]" placeholder="Enter quote ID...">
+        <button class="button">Destroy Quote</button>
+      </form>
+      <form id="update-quip" class="forms">
+        <input required id="quip-id" type="text" name="quip[id]" placeholder="Enter quote id...">
+        <input required id="quip-content" type="text" name="quip[content]" placeholder="Enter Content...">
+        <input required id="quip-author" type="text" name="quip[author]" placeholder="Enter Author...">
+        <input required id="quip-mood" type="text" name="quip[mood]" placeholder="Enter Mood...">
+        <button class="button">Update Quote</button>
+      </form>
+    </section>
+    <section id="option-barTwo" class="topnav">
+      <button class="button" id="update-quote" name="update-quote">Update A Quote</button>
+      <button class="button" id="destroy-quote" name="destroy-quote">Delete A Quote</button>
+      <button class="button" id="random-quote" name="random-quote">Random Quote</button>
+    </section>
+  </section>
+  <br>
+  <section class="content"></section>
+  <br>
+  <section class="footer">
+    <div class="show-signOut">
+      <div class="inner-wrap">
+        <span id="jokes">
+          <button class="jokes button">Bad Jokes</button>
+        </span>
+        <span id="sign-out">
+          <button class="new-out button">Sign Out</button>
+        </span>
+        <span id="show-password">
+          <button class="show-password button">Change Password</button>
+        </span>
+        <span id="uplifter">
+          <button class="uplifter button">Uplifting Quote</button>
+        </span>
+      </div>
+    </div>
+    <br>
+    <div class="show-signOut">
+      <form id="change-password">
+        <input required type="password" name="passwords[old]" placeholder="Enter Old Password">
+        <input required type="password" name="passwords[new]" placeholder="Enter New Password">
+        <button class="button">Change</button>
+      </form>
+    </div>
+  </section>
+</body>
+
+</html>
