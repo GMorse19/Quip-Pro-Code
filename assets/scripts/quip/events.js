@@ -96,7 +96,7 @@ const onDestroyQuip = function(event) {
 }
 
 const findQuote = function() {
-  successMessage('Selct your qoute.')
+  successMessage('Select your quote.')
   $('#option-barTwo').hide()
   $('.content').empty()
   $('#show-quip').show()

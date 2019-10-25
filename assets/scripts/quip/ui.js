@@ -1,6 +1,5 @@
 const store = require('../store')
 const showQuipsTemplate = require('../templates/quip.handlebars')
-const api = require('./api')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
