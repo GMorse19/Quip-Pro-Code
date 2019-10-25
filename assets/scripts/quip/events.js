@@ -6,19 +6,13 @@ const api = require('./api')
 const ui = require('./ui')
 const showQuipsTemplate = require('../templates/find.handlebars')
 
-const evilQuotes = ['Your Momma!', 'Nice shirt!',
-  'Life is full of disappointments, just ask your parents',
-  'I can only explain it to you, I can not understand it for you.',
-  "You're about as useful as a screen door in a submarine.",
-  "I envy everyone you have never met.", "The first step towards failure, is trying.",
-  "If I wanted to kill myself, I'd climb up your ego and jump down to your IQ level.",
-  "People like you are the reason we have middle fingers.",
-  "Tell me… Is being stupid a profession or are you just gifted?",
-  "I’ll try being nicer, if you try being smarter.",
-  "Scientists are trying to figure out how long human can live without a brain. You can tell them your age.",
-  "Stupidity is not a crime so you are free to go.",
-  "Is that your face or did your neck throw up?"
-]
+const badJokes = [ "Q: What did the duck say when she bought a lipstick? A: Put it on my bill!",
+"Q: Where did the computer go dancing? A: The disc-o!", "Q: What do bees do if they need a ride? A: Wait at the buzz stop!",
+"Q: What did the little mountain say to the bigger mountain? A: Hi Cliff!",
+"Q: Why did the can crusher quit his job? A: Because it was soda pressing!",
+"Q: What did Winnie the Pooh say to his agent? A: 'Show me the honey!'",
+"Q: Why did the scarecrow win an award? A: He was outstanding in his field."]
+
 
 const goodQuotes = ["Don't limit your challenges, challenge your limits.",
   "If you cannot do great things, do small things in a great way.",
@@ -95,6 +89,8 @@ const onDestroyQuip = function(event) {
   const id = $('#destroy-quip').val()
   store.quote_id = id
   api.destroyQuip(id)
+    .then(() => api.getQuip())
+    .then(ui.onGetQuipSuccess)
     .then(ui.onDestroyQuipSuccess)
     .catch(ui.onDestroyQuipFailure)
 }
@@ -208,9 +204,9 @@ const selectRandom = function(arr) {
   $('.content').append(showQuipsHtml)
 }
 
-const demoralize = function() {
+const badJoke = function() {
   successMessage('One marvelous quote randomly selected for you.')
-  selectRandom(evilQuotes)
+  selectRandom(badJokes)
 }
 
 const uplift = function() {
@@ -234,6 +230,6 @@ module.exports = {
   showPassword,
   showSignup,
   showSignin,
-  demoralize,
+  badJoke,
   uplift
 }

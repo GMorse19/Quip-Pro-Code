@@ -34,7 +34,7 @@ $(() => {
   $('#random-quote').on('click', quipEvents.randomQuote)
   $('#show-signup-forms').on('click', quipEvents.showSignup)
   $('#show-signin-forms').on('click', quipEvents.showSignin)
-  $('.demoralizer').on('click', quipEvents.demoralize)
+  $('.jokes').on('click', quipEvents.badJoke)
   $('.uplifter').on('click', quipEvents.uplift)
   $('#show-password').on('click', quipEvents.showPassword)
 })

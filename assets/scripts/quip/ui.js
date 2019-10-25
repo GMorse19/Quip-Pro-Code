@@ -1,5 +1,6 @@
 const store = require('../store')
 const showQuipsTemplate = require('../templates/quip.handlebars')
+const api = require('./api')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
@@ -78,7 +79,6 @@ const onShowQuipFailure = function () {
 }
 
 const onDestroyQuipSuccess = function () {
-  $('.content').empty()
   $('#delete-quip').trigger('reset')
   $('#delete-quip').hide()
   successMessage('Your quote with Id: ' + store.quote_id + ' was destroyed.')
