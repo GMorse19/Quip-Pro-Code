@@ -88,9 +88,11 @@ best I could.
 
 ## Unsolved Problems
 
-I still want to worl on signing in on sign-up.
+I still want to work on signing in on sign-up.
 
-I'd like to add more searchable options. Currently you can only searc by ID.
+I'd like to add a link to a third party API to draw quotes from.
+
+I'd like to add more searchable options. Currently you can only search by ID.
 
 I'd like to add an option to only update one parameter at a time.
 
