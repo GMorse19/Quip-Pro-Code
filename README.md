@@ -7,16 +7,19 @@ involved.
 
 The project itself, is a page designed to help programmers get through their
 day by boosting their morale or maybe altering their mood. A user can create a
-database of all their favorite quotes and refernce them in times of despair.
+database of all their favorite quotes and reference them in times of despair.
 
-## Resources
+### Quip Pro Code
 
-HTML
-css
-javascript
-handlebars
-Jquery
-ajax
+![Quip Pro Code Image](./assets/images/quip.png)
+
+## Important Links
+
+[Quip Pro Code API](https://github.com/GMorse19/project-2-api.git)
+
+[Quip Pro Code Deployed Browser](https://gmorse19.github.io/project-2-browser-GMorse/)
+
+[Quip Pro Code Deployed API](https://pacific-harbor-41390.herokuapp.com/)
 
 ## Planning
 
@@ -59,6 +62,30 @@ applying much of what I discovered. In the next version I will give it a shot.
 I finsihed the project with a random choice button and cleaned up my code as
 best I could.
 
+## Technologies Used
+
+- JavaScript
+- jQuery
+- Handlebars
+- HTML
+- CSS
+- Ajax
+
+## Wire Frame
+
+#### Home Page
+![Image](./assets/images/quip-wireframe.png)
+
+## User Stories
+
+- As a user, I want to sign-up and sign-in.
+- As a user, I want to create and delete quotes.
+- As a user, I'd like to add a 'mood' to my created quotes.
+- As a user, I want to view all of my quotes.
+- As a user, I want to update my quotes.
+- As a user, I'd like to view all quotes.
+- As a user, I'd like to search quotes by their mood.
+
 ## Unsolved Problems
 
 I still want to worl on signing in on sign-up.
@@ -69,20 +96,8 @@ I'd like to add an option to only update one parameter at a time.
 
 I'd like to add a better field for adding a quote.
 
-I'd like to add a Demoralizer button for fun. Need to keep those egos in check!
+I'd like to add a Bad Jokes button for fun.
 
 I would definitely like to achieve more on the styling front. Better button
 design, better color scheme, better header and auth fields. Basically, I'd like
 to really take a crack at a full makeover for the project.
-
-## Links
-
-You can find my API <a href="https://github.com/GMorse19/project-2-api.git">here</a>.
-
-You can find my Browser <a href="https://gmorse19.github.io/project-2-browser-GMorse/">here</a>.
-
-You can find my deployed Heroku site <a href="https://pacific-harbor-41390.herokuapp.com/">here</a>.
-
-<a href="https://imgur.com/ROJkHeH">Wire Frames</a>
-
-<a href="https://imgur.com/RtQedZ1">User Stories</a>
