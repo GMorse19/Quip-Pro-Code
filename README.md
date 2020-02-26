@@ -17,7 +17,7 @@ database of all their favorite quotes and reference them in times of despair.
 
 [Quip Pro Code API](https://github.com/GMorse19/project-2-api.git)
 
-[Quip Pro Code Deployed Browser](https://gmorse19.github.io/project-2-browser-GMorse/)
+[Quip Pro Code Deployed Browser](https://gmorse19.github.io/Quip-Pro-Code/)
 
 [Quip Pro Code Deployed API](https://pacific-harbor-41390.herokuapp.com/)
 
